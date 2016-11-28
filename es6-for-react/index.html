@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://gomugom.github.io/es6-for-react/index.html">
 <meta property="og:site_name" content="gomugom">
 <meta property="og:description" content="ReactJS를 작성할 떄에 미리 알아두면 좋은 ES6 문법들을 소개한다.">
-<meta property="og:updated_time" content="2016-11-28T02:30:48.000Z">
+<meta property="og:updated_time" content="2016-11-28T02:38:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ReactJS를 작성할 때에 알아두면 좋은 ES6 문법들">
 <meta name="twitter:description" content="ReactJS를 작성할 떄에 미리 알아두면 좋은 ES6 문법들을 소개한다.">
@@ -245,6 +245,9 @@
         <div class="main-content-wrap">
             <p>ReactJS를 작성할 떄에 미리 알아두면 좋은 ES6 문법들을 소개한다.</p>
 <a id="more"></a>
+<blockquote>
+<p>각 예제의 즉시실행함수는 Console에서의 확인을 좀더 용이하게 하기 위함일 뿐 다른 의미는 없습니다.</p>
+</blockquote>
 <h2 id="1-block-scope"><a href="#1-block-scope" class="headerlink" title="1. block scope"></a>1. block scope</h2><p>기존의 함수에 의한 스코프처럼 <code>{ }</code>으로 감싼 내부에 별도의 스코프가 생성된다.</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  &#123;</div><div class="line">    <span class="keyword">let</span> a = <span class="number">10</span>;</div><div class="line">    &#123;</div><div class="line">      <span class="keyword">let</span> a = <span class="number">20</span>;</div><div class="line">      <span class="built_in">console</span>.log(a);    <span class="comment">// (1)</span></div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.log(a);      <span class="comment">// (2)</span></div><div class="line">  &#125;</div><div class="line">  <span class="built_in">console</span>.log(a);        <span class="comment">// (3)</span></div><div class="line">&#125;)();</div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">let</span> sum = <span class="number">0</span>;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">1</span> ; j &lt;= <span class="number">10</span> ; j++)&#123;</div><div class="line">    sum += j;</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">console</span>.log(sum);     <span class="comment">// (1)</span></div><div class="line">  <span class="built_in">console</span>.log(j);       <span class="comment">// (2)</span></div><div class="line">&#125;)();</div></pre></td></tr></table></figure>

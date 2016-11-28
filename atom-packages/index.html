@@ -9,6 +9,8 @@
     <title>Atom Editor 영업하는 글 - gomugom</title>
     <meta name="author" content="gomugom">
     
+        <meta name="keywords" content="atom,editor,package">
+    
     
         <link rel="icon" href="http://gomugom.github.io/assets/images/favicon.ico">
     
@@ -34,7 +36,7 @@
 <meta property="og:image" content="https://i.github-camo.com/b9a26f64c76d999f99811340d14847cab4b051d9/68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6d6568636f64652f61746f6d2d70726f6a6563742d706c75732f6d61737465722f70726f6a6563742d706c75732e676966">
 <meta property="og:image" content="https://i.github-camo.com/bcbbef1f2dbc1260b544156c3d02a13db4c46b6c/68747470733a2f2f6769746875622e636f6d2f6a65737365776565642f736574692d75692f7261772f6d61737465722f73637265656e73686f742d69636f6e732e706e67">
 <meta property="og:image" content="https://i.github-camo.com/1d6e5771d77b22e50c7f753bd34ecc14b6555946/687474703a2f2f692e696d6775722e636f6d2f576a6b777033352e706e67">
-<meta property="og:updated_time" content="2016-11-27T16:22:47.000Z">
+<meta property="og:updated_time" content="2016-11-28T02:28:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Atom Editor 영업하는 글">
 <meta name="twitter:description" content="Atom 유저로서 패키지를 쓰고는 있는데, Sublime 쓰던 시절에는 블로그에서 여러 사람들의 추천패키지를 검색해서 쓸 수 있었던 반면 Atom 패키지에 대해서는 글을 찾기가 어려워 곤란함을 느꼈기에, 어느정도 사용에 익숙해졌으니 제가 직접 씁니다. 패키지 추천만 하면 (제가) 재미 없으니 잡설부터 들어갑니다. 아래부턴 구어체로…">
@@ -50,6 +52,9 @@
         <meta property="og:image" content="http://gomugom.github.io/atom-packages/../images/category-etc.png"/>
         <meta class="swiftype" name="image" data-type="enum" content="http://gomugom.github.io/atom-packages/../images/category-etc.png" />
     
+    
+        <meta property="og:image" content="http://gomugom.github.io/atom-packages/../images/post-cover2.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://gomugom.github.io/atom-packages/../images/post-cover2.png" />
     
     
     <!--STYLES-->
@@ -68,7 +73,7 @@
         
     
 
-<header id="header" data-behavior="1">
+<header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
         <a class="header-title-link" href="/ ">gomugom</a>
@@ -90,7 +95,7 @@
 
     
 
-<nav id="sidebar" data-behavior="1">
+<nav id="sidebar" data-behavior="4">
     <div class="sidebar-container">
         
             <div class="sidebar-profile">
@@ -213,9 +218,17 @@
 </nav>
 
             
-            <div id="main" data-behavior="1"
-                 class="
-                        hasCoverMetaIn
+        <div class="post-header-cover
+                    text-left
+                    post-header-cover--partial"
+             style="background-image:url('/atom-packages/../images/post-cover2.png');"
+             data-behavior="4">
+            
+        </div>
+
+            <div id="main" data-behavior="4"
+                 class="hasCover
+                        hasCoverMetaOut
                         ">
                 
 <article class="post" itemscope itemType="http://schema.org/BlogPosting">
@@ -393,7 +406,7 @@
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
@@ -455,7 +468,7 @@
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://gomugom.github.io/atom-packages/">
@@ -636,6 +649,31 @@
                     <hr>
                 </div>
                 
+                <div class="media">
+                    
+                    <div class="media-left">
+                        <a class="link-unstyled" href="http://gomugom.github.io/es6-for-react/">
+                            <img class="media-image" src="http://gomugom.github.io/es6-for-react/../images/category-es6.png" width="90" height="90"/>
+                        </a>
+                    </div>
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://gomugom.github.io/es6-for-react/">
+                            <h3 class="media-heading">ReactJS를 작성할 때에 알아두면 좋은 ES6 문법들</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2016년 11월 28일
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>ReactJS를 작성할 떄에 미리 알아두면 좋은 ES6 문법들을 소개한다.</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
             </div>
         </div>
         <div class="modal-footer">
@@ -643,7 +681,7 @@
                 data-message-zero="no post found"
                 data-message-one="1 post found"
                 data-message-other="{n} posts found">
-                4 posts found
+                5 posts found
             </p>
         </div>
     </div>

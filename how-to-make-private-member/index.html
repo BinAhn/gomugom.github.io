@@ -9,6 +9,8 @@
     <title>ES6 Class에서 private member를 정의하는 방법 - gomugom</title>
     <meta name="author" content="gomugom">
     
+        <meta name="keywords" content="es6,javascript,class">
+    
     
         <link rel="icon" href="http://gomugom.github.io/assets/images/favicon.ico">
     
@@ -19,7 +21,7 @@
 <meta property="og:url" content="http://gomugom.github.io/how-to-make-private-member/index.html">
 <meta property="og:site_name" content="gomugom">
 <meta property="og:description" content="es6의 class 문법에는 private data를 직접 지정할 수 있는 기능이 제공되지 않는다.때문에 private data로 쓰고자 하는 변수는 우회적으로 관리하여야 하는데, 그 방법들을 소개한다.">
-<meta property="og:updated_time" content="2016-11-28T00:06:54.000Z">
+<meta property="og:updated_time" content="2016-11-28T02:29:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6 Class에서 private member를 정의하는 방법">
 <meta name="twitter:description" content="es6의 class 문법에는 private data를 직접 지정할 수 있는 기능이 제공되지 않는다.때문에 private data로 쓰고자 하는 변수는 우회적으로 관리하여야 하는데, 그 방법들을 소개한다.">
@@ -34,6 +36,9 @@
         <meta property="og:image" content="http://gomugom.github.io/how-to-make-private-member/../images/category-es6.png"/>
         <meta class="swiftype" name="image" data-type="enum" content="http://gomugom.github.io/how-to-make-private-member/../images/category-es6.png" />
     
+    
+        <meta property="og:image" content="http://gomugom.github.io/how-to-make-private-member/../images/post-cover3.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://gomugom.github.io/how-to-make-private-member/../images/post-cover3.png" />
     
     
     <!--STYLES-->
@@ -52,7 +57,7 @@
         
     
 
-<header id="header" data-behavior="1">
+<header id="header" data-behavior="4">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
     <div class="header-title">
         <a class="header-title-link" href="/ ">gomugom</a>
@@ -74,7 +79,7 @@
 
     
 
-<nav id="sidebar" data-behavior="1">
+<nav id="sidebar" data-behavior="4">
     <div class="sidebar-container">
         
             <div class="sidebar-profile">
@@ -197,15 +202,13 @@
 </nav>
 
             
-            <div id="main" data-behavior="1"
-                 class="
-                        hasCoverMetaIn
-                        ">
-                
-<article class="post" itemscope itemType="http://schema.org/BlogPosting">
-    
-    
-        <div class="post-header main-content-wrap text-left">
+        <div class="post-header-cover
+                    text-left
+                    post-header-cover--partial"
+             style="background-image:url('/how-to-make-private-member/../images/post-cover3.png');"
+             data-behavior="4">
+            
+                <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
             ES6 Class에서 private member를 정의하는 방법
@@ -227,6 +230,16 @@
 </div>
 
 </div>
+            
+        </div>
+
+            <div id="main" data-behavior="4"
+                 class="hasCover
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
@@ -272,7 +285,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/es6-for-react/"  data-tooltip="ReactJS를 작성할 때에 알아두면 좋은 ES6 문법들">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -347,13 +360,13 @@
 
             </div>
             
-                <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
                     <div class="post-actions-wrap">
     <nav>
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/es6-for-react/"  data-tooltip="ReactJS를 작성할 때에 알아두면 좋은 ES6 문법들">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -409,7 +422,7 @@
 
 
                 </div>
-                <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
             <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://gomugom.github.io/how-to-make-private-member/">
@@ -590,6 +603,31 @@
                     <hr>
                 </div>
                 
+                <div class="media">
+                    
+                    <div class="media-left">
+                        <a class="link-unstyled" href="http://gomugom.github.io/es6-for-react/">
+                            <img class="media-image" src="http://gomugom.github.io/es6-for-react/../images/category-es6.png" width="90" height="90"/>
+                        </a>
+                    </div>
+                    
+                    <div class="media-body">
+                        <a class="link-unstyled" href="http://gomugom.github.io/es6-for-react/">
+                            <h3 class="media-heading">ReactJS를 작성할 때에 알아두면 좋은 ES6 문법들</h3>
+                        </a>
+                        <span class="media-meta">
+                            <span class="media-date text-small">
+                                
+                                    2016년 11월 28일
+                                
+                            </span>
+                        </span>
+                        <div class="media-content hide-xs font-merryweather"><p>ReactJS를 작성할 떄에 미리 알아두면 좋은 ES6 문법들을 소개한다.</p></div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <hr>
+                </div>
+                
             </div>
         </div>
         <div class="modal-footer">
@@ -597,7 +635,7 @@
                 data-message-zero="no post found"
                 data-message-one="1 post found"
                 data-message-other="{n} posts found">
-                4 posts found
+                5 posts found
             </p>
         </div>
     </div>

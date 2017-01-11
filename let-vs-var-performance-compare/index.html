@@ -25,7 +25,7 @@
 <meta property="og:description" content="며칠 전 김영보 강사님의 다음 글을 읽고 의문이 들어 직접 ES6의 let과 기존의 var의 성능 차이를 비교한 실험을 해보면서 그 내용을 정리하여 포스팅한다. 모든 테스트는 MacOS 10.11.6 / Chrome 55.0.2283.95 버전에서 수행하였다.
 
 [자바스크립트 let과 var에 대한 생각 - 김영보]ES6에서 let 변수가 생겼으며 이는 블">
-<meta property="og:updated_time" content="2017-01-11T06:51:33.000Z">
+<meta property="og:updated_time" content="2017-01-11T07:02:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="let과 var의 성능 비교">
 <meta name="twitter:description" content="며칠 전 김영보 강사님의 다음 글을 읽고 의문이 들어 직접 ES6의 let과 기존의 var의 성능 차이를 비교한 실험을 해보면서 그 내용을 정리하여 포스팅한다. 모든 테스트는 MacOS 10.11.6 / Chrome 55.0.2283.95 버전에서 수행하였다.
@@ -214,17 +214,7 @@
              style="background-image:url('/let-vs-var-performance-compare/../images/post-cover4.jpg');"
              data-behavior="4">
             
-        </div>
-
-            <div id="main" data-behavior="4"
-                 class="hasCover
-                        hasCoverMetaOut
-                        ">
-                
-<article class="post" itemscope itemType="http://schema.org/BlogPosting">
-    
-    
-        <div class="post-header main-content-wrap text-left">
+                <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
             let과 var의 성능 비교
@@ -246,6 +236,16 @@
 </div>
 
 </div>
+            
+        </div>
+
+            <div id="main" data-behavior="4"
+                 class="hasCover
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
@@ -285,7 +285,7 @@
 </blockquote>
 <p>즉 ‘block statement’가 평가될 때마다 새로운 렉시컬 환경이 생성되며, 이 때 블록스코프가 생성되는 것으로 보아야 할 것이다. 따라서 let이나 const 선언 유무와 무관하게 블록스코프는 무조건 형성된다고 볼 수 있다.<br>기존의 함수 내부에 <code>var</code> 변수를 선언하든 하지 않든 함수스코프가 생성되는 것에는 어떠한 영향도 주지 않는 것과 마찬가지로 말이다.</p>
 <h2 id="결론"><a href="#결론" class="headerlink" title="결론"></a>결론</h2><p>다양한 테스트를 통해 블록스코프와 즉시실행함수 자체의 비용 차이는 크지 않은 것으로 확인되었으며, 스코프체이닝으로 외부 변수에 엑세스할 때의 비용 역시 <code>var</code>와 <code>let</code>이 큰 차이를 보이지 않는 것이 확인되었다.<br>그러나 <code>if</code>나 <code>for</code> 처럼 그 자체가 블록스코프를 지니는 경우에는 블록스코프의 영향에서 자유로운 <code>var</code>를 활용하는 편이 더 좋은 성능을 발휘한다.</p>
-<p>방금 살펴본 대로 블록스코프가 <code>if문 안에 let 변수를 사용했을 때 생긴다</code>는 부분은 잘못 되었다. 블록스코프는 <code>for</code>, <code>while</code>, <code>switch</code> 등의 ‘block statement’에서 무조건 형성된다. 심지어 어떠한 명령어 없이 <code>{ }</code>만 묶는 것 만으로도 블록스코프가 형성된다.</p>
+<p>방금 살펴본 대로 블록스코프가 <code>if문 안에 let 변수를 사용했을 때 생긴다</code>는 것은 잘못 되었다. 블록스코프는 <code>for</code>, <code>while</code>, <code>switch</code> 등의 ‘block statement’에서 무조건 형성된다. 심지어 어떠한 명령어 없이 <code>{ }</code>만 묶는 것 만으로도 블록스코프가 형성된다.</p>
 <p>한편 <code>단일 스코프가 엔진 처리의 효율을 높인다</code>는 데에는 적극 동의한다. 스코프 체이닝을 최소화하는 것이 성능에 유의미한 영향을 준다는 점은 당연한 사실이다.</p>
 <p><code>일반적인 경우 var 변수가 더 효율적</code>이라는 주장에 대해서는 ‘그 때 그 때 다르다’고 봐야 할 것 같다. <code>일반적인 경우</code>를 어떻게 해석하느냐에 따라 달라질 문제이긴 하지만, <code>블록 단위로 스코프를 구분해야 하는 특별한 경우</code>란 늘상 존재하며 오히려 이것이 일반적이라고 볼 수 있지 않나 싶다. 기존의 코딩스타일 안에서 새로운 문법시스템을 판단하는 것 자체가 잘못된 접근일 수 있다는 생각이다. 기왕 블록스코프가 도입된 이상 블록스코프 내에서 독립적으로 처리할 방안(<code>reduce</code> 등)을 고민하고, 마땅한 수단이 없는 경우에 한해 부득이 블록스코프의 영향에서 자유로운 <code>var</code>로 접근하는 편이 더 낫지 않을까 한다.</p>
 <p>덧붙여, 불과 1년 전 <code>var와 let의 성능비교</code> 테스트에 대한 블로그 포스팅을 읽었었는데, 당시에는 <code>var</code>가 <code>let</code>보다 압도적으로 빠른 연산을 수행했던 것으로 기억한다. 그 1년 사이 둘의 성능은 같아졌다. 그만큼 최적화를 진행한 것이리라. 그렇다면 앞서 확인했던 외부스코프에 대한 접근 성능 역시 점차 최적화가 될 것이라 기대한다.</p>
